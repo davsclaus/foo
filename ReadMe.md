@@ -1,22 +1,29 @@
-Camel CDI Example
-=================
+Camel Addon IDEA bug
+====================
 
-This example shows how to work with Camel in the Java Container using CDI to configure components,
-endpoints and beans.
+To reproduce the issue open this project in IDEA 15. 
 
-The example generates messages using timer trigger, writes them to the standard output and the mock
-endpoint (for testing purposes).
+Install JBoss Forge in IDEA.
 
-You will need to compile this example first:
-  mvn install
+Install the Camel addon
 
-To run the example type
-  mvn camel:run
+    http://fabric8.io/guide/forge.html
 
-You will see the message printed to the console every 5th second.
+Its the camel addon (not the commands), eg
 
-To stop the example hit ctrl + c
+    addon-install --coordinate io.fabric8.forge:camel,2.2.72
 
-For more help see the Apache Camel documentation
+ In the project activate forge cmd + alt 4
+ 
+ Select the camel-add-endpoint command
 
-    http://camel.apache.org/
+ In the UI select netty4-http as the component
+
+ Enter the mandatory files, and click next until you hit the error with the `Index out of bounds 2:2`
+
+ The problem is tracked with:
+
+    https://github.com/fabric8io/fabric8/issues/5374
+    https://issues.jboss.org/browse/FORGE-2548
+
+       
