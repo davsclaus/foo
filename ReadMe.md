@@ -15,11 +15,11 @@ Its the camel addon (not the commands), eg
 
  In the project activate forge cmd + alt 4
  
- Select the camel-add-endpoint command
+ Select the camel-add-endpoint-xml command
 
- In the UI select netty4-http as the component
+ In the UI select `netty4-http` as the component, you can filter by `http` to limit the choices, but its often easier to type `n` in the name box to jump down to `n`
 
- Enter the mandatory files, and click next until you hit the error with the `Index out of bounds 2:2`
+ Enter the mandatory fields in the screen, and as well in the following steps, click next until you hit the error with the `Index out of bounds 2:2`
 
  The problem is tracked with:
 
